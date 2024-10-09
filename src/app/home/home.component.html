@@ -1,1 +1,15 @@
 <p>home works!</p>
+
+<div class="home">
+    <div class="hero-section">
+        <h1>We manage your <span>CATALOGS</span></h1> 
+    </div>
+    <div class="user-details-form">
+        @if (isRegister) {
+            <app-register></app-register>
+        } @else {
+            <div class="login-form">
+            </div>
+        }
+    </div>
+</div>
