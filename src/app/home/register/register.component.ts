@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { UserService } from '../../service/user.service';
+import { UserPayload } from '../../../model/UserPayload';
+import { UserResponse } from '../../../model/UserResponse';
 
 @Component({
   selector: 'app-register',
@@ -7,6 +10,9 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+
+  userService: UserService = inject(UserService);
+
   registerForm = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
@@ -14,5 +20,8 @@ export class RegisterComponent {
 
   handleSubmit = (event:any):void => {
     console.log(this.registerForm.value);
+    let user: UserResponse = this.userService.register(this.registerForm);
+    console.log(user);
+
   }
 }
