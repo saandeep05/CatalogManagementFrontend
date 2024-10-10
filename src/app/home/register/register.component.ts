@@ -23,8 +23,12 @@ export class RegisterComponent {
 
   handleSubmit = (event:any):void => {
     console.log(this.registerForm.value);
-    let user: UserResponse = this.userService.register(this.registerForm);
-    console.log(user);
+    this.userService.register(this.registerForm).subscribe(
+      data => {
+        console.log(data);
+        this.userService.storeInLocalStorage(data);
+      }
+    );
     this.router.navigateByUrl('/dashboard');
   }
 }

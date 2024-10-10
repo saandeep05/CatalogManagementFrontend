@@ -22,8 +22,12 @@ export class LoginComponent {
 
   handleSubmit = (event: any) => {
     console.log(this.loginForm.value);
-    let user:UserResponse = this.userService.login(this.loginForm);
-    console.log(user);
+    this.userService.login(this.loginForm).subscribe(
+      data => {
+        console.log(data);
+        this.userService.storeInLocalStorage(data);
+      }
+    );
     this.router.navigateByUrl('/dashboard');
   }
 }

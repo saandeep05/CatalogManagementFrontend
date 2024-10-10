@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { UserPayload } from '../../model/UserPayload';
 import { UserResponse } from '../../model/UserResponse';
 import { FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,34 +17,19 @@ export class UserService {
     this.response = new UserResponse('', '', '');
   }
 
-  register = (form: FormGroup):UserResponse => {
+  register = (form: FormGroup):Observable<UserResponse> => {
     let user: UserPayload = new UserPayload(<String>form.value.username, <String>form.value.password);
     
-    this.http.post<UserResponse>(this.baseURL + "/register", user).subscribe(
-      data => {
-        this.response = data;
-        console.log(this.response);
-        this.storeInLocalStorage(data);
-      }
-    );
-
-    return this.response;
+    return this.http.post<UserResponse>(this.baseURL + "/register", user);
   }
 
-  login(form: FormGroup): UserResponse {
+  login(form: FormGroup): Observable<UserResponse> {
     let user = new UserPayload(<String>form.value.username, <String>form.value.password);
 
-    this.http.post<UserResponse>(this.baseURL + '/login', user).subscribe(
-      data => {
-        this.response = data;
-        console.log(this.response);
-        this.storeInLocalStorage(data);
-      }
-    );
-    return this.response;
+    return this.http.post<UserResponse>(this.baseURL + '/login', user);
   }
 
-  private storeInLocalStorage(user: UserResponse) {
+  storeInLocalStorage(user: UserResponse) {
     localStorage.setItem('username', <string>user.username);
     localStorage.setItem('token', <string>user.token);
     localStorage.setItem('role', <string>user.role);
