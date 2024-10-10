@@ -21,8 +21,9 @@ export class UserService {
     
     this.http.post<UserResponse>(this.baseURL + "/register", user).subscribe(
       data => {
-        console.log(data);
         this.response = data;
+        console.log(this.response);
+        this.storeInLocalStorage(data);
       }
     );
 
@@ -36,8 +37,14 @@ export class UserService {
       data => {
         this.response = data;
         console.log(this.response);
+        this.storeInLocalStorage(data);
       }
     );
     return this.response;
+  }
+
+  private storeInLocalStorage(user: UserResponse) {
+    localStorage.setItem('username', <string>user.getUsername);
+    localStorage.setItem('token', <string>user.getToken);
   }
 }
