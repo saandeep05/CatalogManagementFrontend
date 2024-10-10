@@ -1,0 +1,33 @@
+<p>requester works!</p>
+
+<div class="requester-dashboard">
+    <div class="">
+        <div>
+            <label for="search">Search</label>
+            <input type="text" id="search" [(ngModel)]="searchWord" (keydown)="handleMiscSearch($event)" />
+            <button class="search-btn" (click)="handleSearch()"></button>
+        </div>
+
+        <div class="feed">
+            @for (product of products; track $index) {
+                <div class="product-header">
+                    <span class="name"><h1>{{product.name}}</h1></span>
+                    <span class="category">{{product.category}}</span>
+                    <span class="price"><h4>{{product.price}}</h4></span>
+                </div>
+                <div class="product-info">
+                    @if(product.shortDescription != null) {
+                        <span><p>{{product.shortDescription}}</p></span>
+                    }
+                    @if(product.longDescription != null) {
+                        <span><p>{{product.longDescription}}</p></span>
+                    }
+                    @if(product.shortDescription == null
+                        && product.longDescription == null) {
+                        <p>No information available about this product</p>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>

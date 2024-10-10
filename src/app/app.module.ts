@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './home/register/register.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 import { LoginComponent } from './home/login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RequesterComponent } from './requester/requester.component';
+import { UserDirectComponent } from './user-direct/user-direct.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,15 @@ import { NavbarComponent } from './navbar/navbar.component';
     HomeComponent,
     RegisterComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    RequesterComponent,
+    UserDirectComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]
