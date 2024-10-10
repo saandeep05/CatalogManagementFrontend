@@ -1,8 +1,8 @@
 import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { UserService } from '../../service/user.service';
-import { UserPayload } from '../../../model/UserPayload';
-import { UserResponse } from '../../../model/UserResponse';
+import { UserService } from '../service/user.service';
+import { UserPayload } from '../../model/UserPayload';
+import { UserResponse } from '../../model/UserResponse';
 
 @Component({
   selector: 'app-register',
