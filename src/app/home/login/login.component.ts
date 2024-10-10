@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { UserService } from '../service/user.service';
-import { UserResponse } from '../../model/UserResponse';
+import { UserService } from '../../service/user.service';
+import { UserResponse } from '../../../model/UserResponse';
 
 @Component({
   selector: 'app-login',
