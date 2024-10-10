@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDirectComponent implements OnInit {
   username: string;
-  numRole: Number;
+  numRole: Number = 0;
 
   ngOnInit(): void {
     this.username = <string>localStorage.getItem('username');
@@ -17,6 +17,10 @@ export class UserDirectComponent implements OnInit {
 
   constructor() {
     this.username = <string>localStorage.getItem('username');
-    this.numRole = (<string>localStorage.getItem('role')).split(',').length;
+    if(localStorage.getItem('role') == null) {
+      this.numRole = 1;
+    } else {
+      this.numRole = (<string>localStorage.getItem('role')).split(',').length;
+    }
   }
 }

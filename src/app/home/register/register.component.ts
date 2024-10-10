@@ -27,8 +27,8 @@ export class RegisterComponent {
       data => {
         console.log(data);
         this.userService.storeInLocalStorage(data);
+        this.router.navigateByUrl('/dashboard');
       }
     );
-    this.router.navigateByUrl('/dashboard');
   }
 }
