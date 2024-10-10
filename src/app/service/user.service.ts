@@ -13,7 +13,7 @@ export class UserService {
   response: UserResponse;
 
   constructor(private http: HttpClient) {
-    this.response = new UserResponse('', '');
+    this.response = new UserResponse('', '', '');
   }
 
   register = (form: FormGroup):UserResponse => {
@@ -46,5 +46,6 @@ export class UserService {
   private storeInLocalStorage(user: UserResponse) {
     localStorage.setItem('username', <string>user.username);
     localStorage.setItem('token', <string>user.token);
+    localStorage.setItem('role', <string>user.role);
   }
 }
