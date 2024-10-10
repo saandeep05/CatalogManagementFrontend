@@ -11,6 +11,7 @@ import { LoginComponent } from './home/login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RequesterComponent } from './requester/requester.component';
 import { UserDirectComponent } from './user-direct/user-direct.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UserDirectComponent } from './user-direct/user-direct.component';
     LoginComponent,
     NavbarComponent,
     RequesterComponent,
-    UserDirectComponent
+    UserDirectComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
