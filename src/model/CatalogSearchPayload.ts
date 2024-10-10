@@ -8,4 +8,12 @@ export class CatalogSearchPayload extends CatalogPayload {
     ) {
         super(name);
     }
+
+    get getActiveDate(): Date {
+        return this.activeDate;
+    }
+
+    get getTotalItems(): Number {
+        return this.totalItems;
+    }
 }

@@ -9,4 +9,8 @@ export class Product extends ProductPayload {
     ) {
         super(name, category, price, catalog, longDescription, shortDescription);
     }
+
+    get getId(): Number {
+        return this.id;
+    }
 }

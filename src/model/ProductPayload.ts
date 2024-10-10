@@ -9,4 +9,24 @@ export class ProductPayload extends ProductSearchPayload {
     ) {
         super(name);
     }
+
+    get getCategory(): String {
+        return this.category;
+    }
+
+    get getPrice(): Number {
+        return this.price;
+    }
+
+    get getCatalog(): Number {
+        return this.catalog;
+    }
+
+    get getLongDesc(): String|undefined {
+        return this.longDescription;
+    }
+
+    get getShortDesc(): String|undefined {
+        return this.shortDescription;
+    }
 }

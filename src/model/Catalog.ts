@@ -11,4 +11,12 @@ export class Catalog extends CatalogSearchPayload {
     ) {
         super(name, activeDate, totalItems);
     }
+
+    get getId(): Number {
+        return this.id;
+    }
+
+    get getProducts(): Product[] {
+        return this.products;
+    }
 }
