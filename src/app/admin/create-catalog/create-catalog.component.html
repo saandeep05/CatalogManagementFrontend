@@ -1,0 +1,10 @@
+<p>create-catalog works!</p>
+
+<div class="create">
+    <form (submit)="createCatalog()">
+        <label for="name">Name</label>
+        <input type="text" id="name" [(ngModel)]="name" />
+
+        <button type="submit">Create</button>
+    </form>
+</div>

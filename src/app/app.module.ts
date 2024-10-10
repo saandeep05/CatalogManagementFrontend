@@ -13,6 +13,7 @@ import { RequesterComponent } from './requester/requester.component';
 import { UserDirectComponent } from './user-direct/user-direct.component';
 import { AdminComponent } from './admin/admin.component';
 import { CreateProductComponent } from './admin/create-product/create-product.component';
+import { CreateCatalogComponent } from './admin/create-catalog/create-catalog.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CreateProductComponent } from './admin/create-product/create-product.co
     RequesterComponent,
     UserDirectComponent,
     AdminComponent,
-    CreateProductComponent
+    CreateProductComponent,
+    CreateCatalogComponent
     
   ],
   imports: [
