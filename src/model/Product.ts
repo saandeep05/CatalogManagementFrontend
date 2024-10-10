@@ -1,16 +1,12 @@
-export interface Product {
-    id: Number;
-    name: String;
-    category: String;
-    price: Number;
-    longDescription?: String;
-    shortDescription?: String;
-    catalog?: Number
-    
-    // constructor(private id: Number, private name: String,
-    //     private category: String, private price: Number,
-    //     private longDescription?: String,
-    //     private shortDescription?: String,
-    //     private catalog?: Number
-    // ) {}
+import { ProductPayload } from "./ProductPayload";
+
+export class Product extends ProductPayload {
+    constructor(private id: Number, name: String,
+        category: String, price: Number,
+        catalog: Number,
+        longDescription?: String,
+        shortDescription?: String,
+    ) {
+        super(name, category, price, catalog, longDescription, shortDescription);
+    }
 }

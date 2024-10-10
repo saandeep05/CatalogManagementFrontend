@@ -1,0 +1,22 @@
+<p>create-product works!</p>
+
+<div class="create">
+    <form [formGroup]="productForm" (submit)="createProduct()">
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name" />
+
+        <label for="category">Category</label>
+        <input type="text" id="category" formControlName="category" />
+
+        <label for="price">Price</label>
+        <input type="text" id="price" formControlName="price" />
+
+        <label for="long-description">Long Description</label>
+        <input type="text" id="long-description" formControlName="longDescription" />
+
+        <label for="short-description">Short Description</label>
+        <input type="text" id="short-description" formControlName="shortDescription" />
+
+        <button type="submit">Create</button>
+    </form>
+</div>

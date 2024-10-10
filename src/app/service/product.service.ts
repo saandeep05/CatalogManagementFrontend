@@ -2,6 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../../model/Product';
 import { Observable } from 'rxjs';
+import { FormGroup } from '@angular/forms';
+import { ProductPayload } from '../../model/ProductPayload';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +29,14 @@ export class ProductService {
     console.log(options);
 
     return this.http.get<Product[]>(this.baseUrl+`/search/${searchWord}`, options);
+  }
+
+  createProduct(form: FormGroup, catalogId: Number): void {
+    let options = {headers: this.headers};
+    let {name, category, price, longDescription, shortDescription} = form.value;
+    let payload: ProductPayload = new ProductPayload(name, category, price, catalogId, longDescription, shortDescription);
+
+    this.http.post(this.baseUrl + '/products', payload, options).subscribe();
   }
 
   getToken(): string {

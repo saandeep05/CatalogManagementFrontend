@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RequesterComponent } from './requester/requester.component';
 import { UserDirectComponent } from './user-direct/user-direct.component';
 import { AdminComponent } from './admin/admin.component';
+import { CreateProductComponent } from './admin/create-product/create-product.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AdminComponent } from './admin/admin.component';
     NavbarComponent,
     RequesterComponent,
     UserDirectComponent,
-    AdminComponent
+    AdminComponent,
+    CreateProductComponent
     
   ],
   imports: [
