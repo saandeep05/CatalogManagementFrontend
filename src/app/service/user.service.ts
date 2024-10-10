@@ -44,7 +44,7 @@ export class UserService {
   }
 
   private storeInLocalStorage(user: UserResponse) {
-    localStorage.setItem('username', <string>user.getUsername);
-    localStorage.setItem('token', <string>user.getToken);
+    localStorage.setItem('username', <string>user.username);
+    localStorage.setItem('token', <string>user.token);
   }
 }

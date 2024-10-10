@@ -1,0 +1,17 @@
+<p>navbar works!</p>
+
+<div class="navbar">
+    <span class="logo"><img /></span>
+    
+    @if(isLoggedIn) {
+        <span class="uname">{{username}}</span>
+        <span class="logout">
+            <button class="danger">Logout</button>
+        </span>
+    } @else {
+        <span>
+            <button class="register-btn">Register</button>
+            <button class="login-btn">Login</button>
+        </span>
+    }
+</div>

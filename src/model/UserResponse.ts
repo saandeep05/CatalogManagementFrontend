@@ -1,11 +1,11 @@
 export class UserResponse {
-    constructor(private username: String, private token: String) {}
+    constructor(private _username: String, private _token: String) {}
 
-    get getUsername(): String {
-        return this.username;
+    get username(): String {
+        return this._username;
     }
 
-    get getToken(): String {
-        return this.token
+    get token(): String {
+        return this._token
     }
 }

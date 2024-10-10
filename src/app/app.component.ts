@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CatalogMngmtFrontend';
+  username: String = '';
+
+  constructor() {
+    if(localStorage.getItem('username') != null) {
+      this.username = <String>localStorage.getItem('username');
+    }
+  }
 }
