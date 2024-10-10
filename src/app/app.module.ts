@@ -23,6 +23,7 @@ import { AdminComponent } from './admin/admin.component';
     RequesterComponent,
     UserDirectComponent,
     AdminComponent
+    
   ],
   imports: [
     BrowserModule,

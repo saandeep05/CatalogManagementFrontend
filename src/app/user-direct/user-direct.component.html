@@ -4,6 +4,8 @@
     @if(numRole == 1) {
         <app-requester></app-requester>
     } @else if (numRole == 2) {
-
-    } @else {}
+        <app-admin></app-admin>
+    } @else {
+        <div>You are not authenticated</div>
+    }
 </div>
