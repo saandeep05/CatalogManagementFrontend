@@ -1,0 +1,13 @@
+<p>login works!</p>
+
+<div class="login">
+    <form [formGroup]="loginForm" (submit)="handleSubmit($event)">
+        <label for="username">Username</label>
+        <input type="text" id="username" formControlName="username" />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" />
+
+        <button type="submit">Submit</button>
+    </form>
+</div>

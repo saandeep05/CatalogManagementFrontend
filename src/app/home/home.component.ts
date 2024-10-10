@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   isRegister: boolean = true;
+
+  toggleIsRegister() {
+    this.isRegister = !this.isRegister;
+  }
 }

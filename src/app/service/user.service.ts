@@ -28,4 +28,16 @@ export class UserService {
 
     return this.response;
   }
+
+  login(form: FormGroup): UserResponse {
+    let user = new UserPayload(<String>form.value.username, <String>form.value.password);
+
+    this.http.post<UserResponse>(this.baseURL + '/login', user).subscribe(
+      data => {
+        this.response = data;
+        console.log(this.response);
+      }
+    );
+    return this.response;
+  }
 }
