@@ -20,10 +20,20 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  ngOnChanges() {
+    if(this.username == '' || this.username == null) {
+      this.isLoggedIn = false;
+    } else {
+      this.isLoggedIn = true;
+    }
+  }
+
   handleLogout(): void {
     localStorage.removeItem('username');
     localStorage.removeItem('token');
     localStorage.removeItem('role');
+    this.username = '';
+    this.isLoggedIn = false;
     this.router.navigateByUrl('/');
   }
 }
