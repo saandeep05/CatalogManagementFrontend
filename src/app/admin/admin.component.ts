@@ -29,6 +29,7 @@ export class AdminComponent implements OnInit {
     this.catalogService.getCatalogs().subscribe(
       data => {
         this.catalogs = data;
+        console.log(data)
       }
     );
   }

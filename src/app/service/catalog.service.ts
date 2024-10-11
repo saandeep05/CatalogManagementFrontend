@@ -12,14 +12,18 @@ import { CatalogPayload } from '../../model/CatalogPayload';
 export class CatalogService {
   baseUrl: string = "http://localhost:8080/api/catalog";
   headers = new HttpHeaders({
+    'Content-Type': 'application/json',
     'Authorization': 'Bearer ' + this.getToken()
-  })
+  });
 
   constructor(private http: HttpClient) { }
 
-  getCatalogs(): Observable<Catalog[]> {
+  getCatalogs(): Observable<any> {
     let options = {headers: this.headers};
-    return this.http.get<Catalog[]>(this.baseUrl, options);
+    console.log(this.headers);
+    console.log(options);
+
+    return this.http.get(this.baseUrl, { headers: this.headers });
   }
 
   getSearchedCatalogs(form: FormGroup): Observable<Catalog[]> {
@@ -33,6 +37,7 @@ export class CatalogService {
   createCatalog(name: String): void {
     let options = {headers: this.headers};
     let catalog: CatalogPayload = new CatalogPayload(name);
+    
     this.http.post<Catalog>(this.baseUrl, catalog, options).subscribe();
   }
 
