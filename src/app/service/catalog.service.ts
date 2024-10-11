@@ -28,15 +28,19 @@ export class CatalogService {
 
   getSearchedCatalogs(form: FormGroup): Observable<Catalog[]> {
     let options = {headers: this.headers};
-    let {name, activeDate, totalItems} = form.value;
-    let payload: CatalogSearchPayload = new CatalogSearchPayload(name, activeDate, totalItems);
+    let {name, startDate, endDate} = form.value;
+    let payload: CatalogSearchPayload = {
+      name,
+      startDate,
+      endDate
+    };
 
     return this.http.post<Catalog[]>(this.baseUrl + `/search/true`, payload, options);
   }
 
   createCatalog(name: String): void {
     let options = {headers: this.headers};
-    let catalog: CatalogPayload = new CatalogPayload(name);
+    let catalog: CatalogPayload = {name};
     
     this.http.post<Catalog>(this.baseUrl, catalog, options).subscribe();
   }

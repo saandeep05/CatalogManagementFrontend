@@ -1,5 +1,31 @@
 <p>admin works!</p>
 
-<div>
-    <button (click)="fetchAllCatalogs()">Get Catalogs</button>
+<div class="admin-dashboard">
+    <form [formGroup]="searchForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name" />
+
+        <label for="start-date">From</label>
+        <input type="text" id="start-date" formControlName="startDate" />
+
+        <label for="end-date">Till</label>
+        <input type="text" id="end-date" formControlName="endDate" />
+
+        <button class="search-btn" (click)="searchCatalog()">Search</button>
+    </form>
+
+    <div class="Catalog-List">
+        <div><button class="add-catalog">Add Catalog</button></div>
+        @for (catalog of catalogs; track $index) {
+            <div class="product-header">
+                <span class="name"><h1>{{catalog.name}}</h1></span>
+                <span class="category"><h3>{{catalog.activeDate}}</h3></span>
+                <span class="price"><h3>{{catalog.totalItems}}</h3></span>
+            </div>
+            <div class="catalog-info">
+                <button type="add-product">Add Product</button>
+                <button class="show-more">Show Products</button>
+            </div>
+        }
+    </div>
 </div>

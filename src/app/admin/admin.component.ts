@@ -17,8 +17,8 @@ export class AdminComponent implements OnInit {
 
   searchForm = new FormGroup({
     name: new FormControl(''),
-    activeDate: new FormControl(new Date()),
-    totalItems: new FormControl(0)
+    startDate: new FormControl(new Date()),
+    endDate: new FormControl(new Date())
   });
 
   ngOnInit(): void {

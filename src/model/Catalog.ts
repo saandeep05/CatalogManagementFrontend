@@ -1,22 +1,9 @@
-import { CatalogSearchPayload } from "./CatalogSearchPayload";
+import { CatalogPayload } from "./CatalogPayload";
 import { Product } from "./Product";
 
-export class Catalog extends CatalogSearchPayload {
-    constructor(
-        private id: Number,
-        name: String,
-        activeDate: Date,
-        totalItems: Number,
-        private products: Product[]
-    ) {
-        super(name, activeDate, totalItems);
-    }
-
-    get getId(): Number {
-        return this.id;
-    }
-
-    get getProducts(): Product[] {
-        return this.products;
-    }
+export interface Catalog extends CatalogPayload {
+    id: String;
+    activeDate: Date;
+    totalItems: Number;
+    products?: Product[];
 }
