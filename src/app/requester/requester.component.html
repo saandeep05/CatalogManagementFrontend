@@ -4,25 +4,25 @@
     <div>
         <label for="search">Search</label>
         <input type="text" id="search" [(ngModel)]="searchWord" (keydown)="handleMiscSearch($event)" />
-        <button class="search-btn" (click)="handleSearch()"></button>
+        <button class="search-btn" (click)="handleSearch()">Search</button>
     </div>
 
     <div class="feed">
         @for (product of products; track $index) {
             <div class="product-header">
-                <span class="name"><h1>{{product.getName}}</h1></span>
-                <span class="category">{{product.getCategory}}</span>
-                <span class="price"><h4>{{product.getPrice}}</h4></span>
+                <span class="name"><h1>{{product.name}}</h1></span>
+                <span class="category">{{product.category}}</span>
+                <span class="price"><h4>{{product.price}}</h4></span>
             </div>
             <div class="product-info">
-                @if(product.getShortDesc) {
-                    <span><p>{{product.getShortDesc}}</p></span>
+                @if(product.shortDescription) {
+                    <span><p>{{product.shortDescription}}</p></span>
                 }
-                @if(product.getLongDesc) {
-                    <span><p>{{product.getLongDesc}}</p></span>
+                @if(product.longDescription) {
+                    <span><p>{{product.longDescription}}</p></span>
                 }
-                @if(!product.getShortDesc
-                    && !product.getLongDesc) {
+                @if(!product.shortDescription
+                    && !product.longDescription) {
                     <p>No information available about this product</p>
                 }
             </div>

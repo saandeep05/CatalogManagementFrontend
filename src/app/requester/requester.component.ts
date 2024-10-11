@@ -22,6 +22,7 @@ export class RequesterComponent implements OnInit {
       data => {
         this.products = data;
         console.log(data)
+        data.forEach(product => console.log(product.id))
       }
     );
   }

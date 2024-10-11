@@ -34,7 +34,14 @@ export class ProductService {
   createProduct(form: FormGroup, catalogId: Number): void {
     let options = {headers: this.headers};
     let {name, category, price, longDescription, shortDescription} = form.value;
-    let payload: ProductPayload = new ProductPayload(name, category, price, catalogId, longDescription, shortDescription);
+    let payload: ProductPayload = {
+      name,
+      category,
+      price,
+      catalog:catalogId,
+      longDescription,
+      shortDescription
+    };
 
     this.http.post(this.baseUrl + '/products', payload, options).subscribe();
   }
