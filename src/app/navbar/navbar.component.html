@@ -6,7 +6,7 @@
     @if(isLoggedIn) {
         <span class="uname">{{username}}</span>
         <span class="logout">
-            <button class="danger">Logout</button>
+            <button class="danger" (click)="handleLogout()">Logout</button>
         </span>
     } @else {
         <span>
