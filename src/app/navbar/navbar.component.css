@@ -1,0 +1,46 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+    margin: 0;
+    padding: 0.5rem;
+    background-color: #412234;
+}
+
+.navbar h3 {
+    color: rgb(250, 235, 215);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.3rem;
+}
+
+.logged-in, .default {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logged-in div {
+    margin: 0 1rem;
+}
+
+.default button {
+    margin: 0 1rem;
+}
+
+.navbar button {
+    padding: 0.5em 1rem;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    background-color: antiquewhite;
+}
+
+.navbar button:hover {
+    color: #2E4052;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: 0 2px antiquewhite;
+}
