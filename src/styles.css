@@ -58,3 +58,29 @@ p {
     font-weight: bolder;
     font-size: 1.5rem;
 }
+
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin: 2rem;
+}
+
+.search input {
+    font-family: 'Roboto Mono', monospace;
+    padding: 5px 5px;
+    /* border-right: none; */
+}
+
+.search button {
+    padding: 5px 5px;
+    background-color: #412234;
+    color: antiquewhite;
+    border: solid #412234;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.search button:hover {
+    cursor: pointer;
+}
