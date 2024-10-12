@@ -7,4 +7,54 @@
 body {
     margin: 0;
     height: 649px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.user-form {
+    padding: 5rem 5rem;
+    border: 2px solid #412234;
+}
+
+.user-form form {
+    height: auto;
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bolder;
+}
+
+.user-form form input {
+    font-family: 'Roboto Mono', monospace;
+    padding: 10px 10px;
+    margin: 10px 0;
+}
+
+.submit-btn {
+    margin: 5px 0;
+    padding: 10px 0;
+    background-color: #412234;
+    color: antiquewhite;
+    border: 0;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: seagreen;
+    /* color: black; */
+    cursor: pointer;
+}
+
+label {
+    color: #2E4052;
+}
+
+p {
+    display: flex;
+    text-align: center;
+    color: #2E4052;
+    font-weight: bolder;
+    font-size: 1.5rem;
 }
