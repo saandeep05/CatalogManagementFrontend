@@ -10,6 +10,10 @@ body {
     font-family: 'Roboto Mono', monospace;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .user-form {
     padding: 5rem 5rem;
     border: 2px solid #412234;
@@ -44,7 +48,6 @@ body {
 .submit-btn:hover {
     background-color: seagreen;
     /* color: black; */
-    cursor: pointer;
 }
 
 label {
@@ -137,8 +140,4 @@ p {
     border: solid #412234;
     font-family: 'Roboto Mono', monospace;
     border-radius: 2px;
-}
-
-.search button:hover {
-    cursor: pointer;
 }

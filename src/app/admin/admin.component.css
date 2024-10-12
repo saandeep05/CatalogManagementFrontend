@@ -6,18 +6,13 @@
     padding: 1rem;
 }
 
-.catalog-info button {
+.dashboard button {
     padding: 10px 10px;
     background-color: #412234;
     border: 0;
     color: antiquewhite;
     font-family: 'Roboto Mono', monospace;
     border-radius: 2px;
-}
-
-.catalog-info button:hover {
-    cursor: pointer;
-    color: white;
 }
 
 .search {
