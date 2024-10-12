@@ -1,7 +1,5 @@
-<p>admin works!</p>
-
-<div class="admin-dashboard">
-    <form [formGroup]="searchForm">
+<div class="admin-dashboard dashboard">
+    <form [formGroup]="searchForm" class="search">
         <label for="name">Name</label>
         <input type="text" id="name" formControlName="name" />
 
@@ -14,18 +12,21 @@
         <button class="search-btn" (click)="searchCatalog()">Search</button>
     </form>
 
-    <div class="Catalog-List">
-        <div><button class="add-catalog">Add Catalog</button></div>
+    <div class="catalog-list item-list">
         @for (catalog of catalogs; track $index) {
-            <div class="product-header">
-                <span class="name"><h1>{{catalog.name}}</h1></span>
-                <span class="category"><h3>{{catalog.activeDate}}</h3></span>
-                <span class="price"><h3>{{catalog.totalItems}}</h3></span>
-            </div>
-            <div class="catalog-info">
-                <button type="add-product">Add Product</button>
-                <button class="show-more">Show Products</button>
+            <div class="catalog-item item">
+                <div class="catalog-header item-header">
+                    <span class="name"><h1>{{catalog.name}}</h1></span>
+                    <span class="category"><h3>{{catalog.activeDate}}</h3></span>
+                    <span class="price"><h3>{{catalog.totalItems}}</h3></span>
+                </div>
+                <div class="catalog-info item-info">
+                    <button type="add-product">Add Product</button>
+                    <button class="show-more">Show Products</button>
+                </div>
             </div>
         }
     </div>
+
+    <div><button class="add-catalog">Add Catalog</button></div>
 </div>

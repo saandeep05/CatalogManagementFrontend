@@ -1,0 +1,36 @@
+.catalog-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+.catalog-info button {
+    padding: 10px 10px;
+    background-color: #412234;
+    border: 0;
+    color: antiquewhite;
+    font-family: 'Roboto Mono', monospace;
+    border-radius: 2px;
+}
+
+.catalog-info button:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+
+.search input {
+    margin-bottom: 1rem;
+}
+
+.search label {
+    margin-bottom: 0.5rem;
+}

@@ -67,6 +67,63 @@ p {
     margin: 2rem;
 }
 
+.item-list {
+    width: 65%;
+    padding: 1rem;
+    height: 35rem;
+    overflow-y: auto;
+    border: 2px solid #412234;
+    border-radius: 2px;
+}
+
+.item-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+.item-list::-webkit-scrollbar-thumb {
+    background-color: #412234;
+    border-radius: 1rem;
+}
+
+.item-list::-webkit-scrollbar-track {
+    /* background-color: #FFC857; */
+    border-radius: 1rem;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #A47963;
+    border-radius: 2px;
+}
+
+.item .item-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: antiquewhite;
+    color: #412234;
+    border-radius: 2px;
+}
+
+.item .item-info {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    border: 2px solid #412234;
+    border-top: 0;
+    background-color: #A47963;
+    border-radius: 2px;
+}
+
 .search input {
     font-family: 'Roboto Mono', monospace;
     padding: 5px 5px;
@@ -79,6 +136,7 @@ p {
     color: antiquewhite;
     border: solid #412234;
     font-family: 'Roboto Mono', monospace;
+    border-radius: 2px;
 }
 
 .search button:hover {

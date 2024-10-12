@@ -5,15 +5,15 @@
         <button class="search-btn" (click)="handleSearch()">Search</button>
     </div>
 
-    <div class="feed">
+    <div class="feed item-list">
         @for (product of products; track $index) {
-            <div class="product">
-                <div class="product-header">
+            <div class="product item">
+                <div class="product-header item-header">
                     <span class="name"><h1>{{product.name}}</h1></span>
                     <span class="category">{{product.category}}</span>
                     <span class="price"><h4>{{product.price}}</h4></span>
                 </div>
-                <div class="product-info">
+                <div class="product-info item-info">
                     @if(product.shortDescription) {
                         <div class="short-description" [ngClass]="{'no-long-desc': !product.longDescription}"><p>{{product.shortDescription}}</p></div>
                     }
