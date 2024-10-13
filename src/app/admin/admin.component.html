@@ -27,6 +27,11 @@
             </div>
         }
     </div>
-
-    <div><button class="add-catalog">Add Catalog</button></div>
+    <div class="add-catalog">
+        @if (!isCatalogFormActive) {
+            <div><button class="add-catalog-btn" (click)="toggleCatalogForm()">Add Catalog</button></div>
+        } @else {
+            <app-create-catalog (cancel)="toggleCatalogForm()"></app-create-catalog>
+        }
+    </div>
 </div>

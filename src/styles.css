@@ -12,6 +12,7 @@ body {
 
 button:hover {
     cursor: pointer;
+    box-shadow: 2px 2px #2E4052;
 }
 
 .user-form {
@@ -127,6 +128,11 @@ p {
     border-radius: 2px;
 }
 
+.search {
+    border: 2px dotted;
+    padding: 1rem;
+}
+
 .search input {
     font-family: 'Roboto Mono', monospace;
     padding: 5px 5px;
@@ -135,9 +141,50 @@ p {
 
 .search button {
     padding: 5px 5px;
-    background-color: #412234;
-    color: antiquewhite;
-    border: solid #412234;
     font-family: 'Roboto Mono', monospace;
     border-radius: 2px;
+}
+
+.create-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
+    border: 2px solid;
+}
+
+.create-form label, .create-form input {
+    margin-bottom: 1rem;
+}
+
+.create-form input {
+    padding: 5px 5px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.create-button-grp {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.create-button-grp button {
+    color: antiquewhite;
+    padding: 5px 5px;
+    border-radius: 2px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.create-button-grp .submit-button {
+    background-color: seagreen;
+    border: 2px solid seagreen;
+}
+
+.create-button-grp .cancel-button {
+    color: black;
+    background-color: #FE6F5E;
+    border: 2px solid #FE6F5E;
 }

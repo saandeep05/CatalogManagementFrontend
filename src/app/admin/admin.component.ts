@@ -14,6 +14,7 @@ export class AdminComponent implements OnInit {
   productService: ProductService = inject(ProductService);
 
   catalogs: Catalog[] = [];
+  isCatalogFormActive = false;
 
   searchForm = new FormGroup({
     name: new FormControl(''),
@@ -22,6 +23,7 @@ export class AdminComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    this.isCatalogFormActive = false;
     this.fetchAllCatalogs();
   }
 
@@ -43,5 +45,9 @@ export class AdminComponent implements OnInit {
         console.log(data);
       }
     );
+  }
+
+  toggleCatalogForm(): void {
+    this.isCatalogFormActive = !this.isCatalogFormActive;
   }
 }
