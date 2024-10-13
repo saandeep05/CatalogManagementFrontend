@@ -36,10 +36,6 @@ export class AdminComponent implements OnInit {
 
   searchCatalog(): void {
     console.log(this.searchForm.value);
-    let {startDate, endDate} = this.searchForm.value;
-    // if(typeof(startDate) == "string") console.log(startDate);
-    // if(typeof(endDate) == "string") console.log(endDate);
-    // if(typeof(endDate) != "string") console.log(new Date(new Date().toISOString().slice(0, 10)));
 
     this.catalogService.getSearchedCatalogs(this.searchForm).subscribe(
       data => {
