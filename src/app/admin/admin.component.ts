@@ -62,6 +62,7 @@ export class AdminComponent implements OnInit {
   }
 
   handleAddProduct(catalogId: Number, catalogName: String): void {
+    this.isCatalogFormActive = false;
     if(catalogId == this.catalogActiveId) {
       this.setDefaultActiveCatalog();
       this.toggleProductForm();
