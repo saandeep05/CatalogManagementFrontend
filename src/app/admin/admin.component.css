@@ -29,3 +29,7 @@
 .search label {
     margin-bottom: 0.5rem;
 }
+
+.item-info .cancel-product {
+    background-color: brown;
+}

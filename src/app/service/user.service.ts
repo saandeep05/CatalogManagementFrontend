@@ -18,13 +18,13 @@ export class UserService {
   }
 
   register = (form: FormGroup):Observable<UserResponse> => {
-    let user: UserPayload = new UserPayload(<String>form.value.username, <String>form.value.password);
+    let user: UserPayload = new UserPayload(<String>form.value.username, <String>form.value.email, <String>form.value.password);
     
     return this.http.post<UserResponse>(this.baseURL + "/register", user);
   }
 
   login(form: FormGroup): Observable<UserResponse> {
-    let user = new UserPayload(<String>form.value.username, <String>form.value.password);
+    let user = new UserPayload(<String>form.value.username, <String> form.value.email, <String>form.value.password);
 
     return this.http.post<UserResponse>(this.baseURL + '/login', user);
   }

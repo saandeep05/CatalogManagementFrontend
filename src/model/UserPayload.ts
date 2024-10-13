@@ -1,3 +1,3 @@
 export class UserPayload {
-    constructor(private username: String, private password: String) {}
+    constructor(private username: String, private email: String, private password: String) {}
 }

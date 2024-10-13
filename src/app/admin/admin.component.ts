@@ -15,6 +15,9 @@ export class AdminComponent implements OnInit {
 
   catalogs: Catalog[] = [];
   isCatalogFormActive = false;
+  isProductFormActive = false;
+  catalogActiveId: Number = 0;
+  catalogActiveName: String = '';
 
   searchForm = new FormGroup({
     name: new FormControl(''),
@@ -48,6 +51,30 @@ export class AdminComponent implements OnInit {
   }
 
   toggleCatalogForm(): void {
+    this.isProductFormActive = false;
+    this.setDefaultActiveCatalog();
     this.isCatalogFormActive = !this.isCatalogFormActive;
+  }
+
+  toggleProductForm(): void {
+    this.isCatalogFormActive = false;
+    this.isProductFormActive = !this.isProductFormActive;
+  }
+
+  handleAddProduct(catalogId: Number, catalogName: String): void {
+    if(catalogId == this.catalogActiveId) {
+      this.setDefaultActiveCatalog();
+      this.toggleProductForm();
+    }
+    else {
+      this.catalogActiveId = catalogId;
+      this.catalogActiveName = catalogName;
+      this.isProductFormActive = true;
+    }
+  }
+
+  setDefaultActiveCatalog(): void {
+    this.catalogActiveId = 0;
+    this.catalogActiveName = '';
   }
 }

@@ -10,11 +10,12 @@ import { ProductService } from '../../service/product.service';
 export class CreateProductComponent {
   productService: ProductService = inject(ProductService);
   @Input() catalogId: Number = 0;
+  @Input() catalogName: String = '';
 
   productForm = new FormGroup({
     name: new FormControl(''),
     category: new FormControl(''),
-    price: new FormControl(0),
+    price: new FormControl(''),
     longDescription: new FormControl(''),
     shortDescription: new FormControl(''),
   });

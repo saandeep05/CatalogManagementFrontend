@@ -20,7 +20,7 @@ button:hover {
     border: 2px solid #412234;
 }
 
-.user-form form {
+.user-form  form {
     height: auto;
     width: 15rem;
     display: flex;
@@ -150,15 +150,15 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 1rem;
+    padding: 10px 10px;
     border: 2px solid;
 }
 
-.create-form label, .create-form input {
+.create-form label, .create-form input, .create-form textarea {
     margin-bottom: 1rem;
 }
 
-.create-form input {
+.create-form input, .create-form textarea {
     padding: 5px 5px;
     font-family: 'Roboto Mono', monospace;
 }

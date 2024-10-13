@@ -21,7 +21,11 @@
                     <span class="price"><h3>{{catalog.totalItems}}</h3></span>
                 </div>
                 <div class="catalog-info item-info">
-                    <button type="add-product">Add Product</button>
+                    @if(catalogActiveId != catalog.id) {
+                        <button class="add-product" (click)="handleAddProduct(catalog.id, catalog.name)">Add Product</button>
+                    } @else {
+                        <button class="cancel-product" (click)="handleAddProduct(catalog.id, catalog.name)">Cancel</button>
+                    }
                     <button class="show-more">Show Products</button>
                 </div>
             </div>
@@ -33,5 +37,10 @@
         } @else {
             <app-create-catalog (cancel)="toggleCatalogForm()"></app-create-catalog>
         }
+        <div>
+            @if(isProductFormActive) {
+                <app-create-product [catalogId]="catalogActiveId" [catalogName]="catalogActiveName"></app-create-product>
+            }
+        </div>
     </div>
 </div>
