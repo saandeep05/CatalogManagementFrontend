@@ -5,5 +5,6 @@ export interface Catalog extends CatalogPayload {
     id: Number;
     activeDate: Date;
     totalItems: Number;
+    deletedAt: Date;
     products?: Product[];
 }
