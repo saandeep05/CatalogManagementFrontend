@@ -78,4 +78,9 @@ export class AdminComponent implements OnInit {
     this.catalogActiveId = 0;
     this.catalogActiveName = '';
   }
+
+  handleDeleteCatalog(catalogId: Number, index: number): void {
+    this.catalogService.deleteCatalog(catalogId);
+    this.catalogs.splice(index, 1);
+  }
 }

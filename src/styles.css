@@ -188,3 +188,8 @@ p {
     background-color: #FE6F5E;
     border: 2px solid #FE6F5E;
 }
+
+.item .item-info .delete-item-btn {
+    color: antiquewhite !important;
+    background-color: rgb(160, 8, 8) !important;
+}

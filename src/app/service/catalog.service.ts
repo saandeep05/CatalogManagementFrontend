@@ -48,6 +48,11 @@ export class CatalogService {
     this.http.post<Catalog>(this.baseUrl, catalog, options).subscribe();
   }
 
+  deleteCatalog(catalogId: Number): void {
+    let options = {headers: this.headers};
+    this.http.delete<void>(this.baseUrl+`/${catalogId}`, options).subscribe();
+  }
+
   getToken(): string {
     return <string>localStorage.getItem('token');
   }

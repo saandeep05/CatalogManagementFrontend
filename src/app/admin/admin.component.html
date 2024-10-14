@@ -27,6 +27,7 @@
                         <button class="cancel-product" (click)="handleAddProduct(catalog.id, catalog.name)">Cancel</button>
                     }
                     <button class="show-more">Show Products</button>
+                    <button class="delete-item-btn" (click)="handleDeleteCatalog(catalog.id, $index)">Delete</button>
                 </div>
             </div>
         }
