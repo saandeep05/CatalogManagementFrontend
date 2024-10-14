@@ -24,6 +24,7 @@ export class CreateProductComponent {
 
   createProduct(): void {
     this.productService.createProduct(this.productForm, this.catalogId);
+    alert(`${this.productForm.value.name} added to ${this.catalogName} successfully`);
   }
 
   handleCancel(): void {
