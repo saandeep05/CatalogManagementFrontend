@@ -15,7 +15,8 @@ export class CreateProductComponent {
   productForm = new FormGroup({
     name: new FormControl(''),
     category: new FormControl(''),
-    price: new FormControl(''),
+    price: new FormControl(),
+    currency: new FormControl(''),
     longDescription: new FormControl(''),
     shortDescription: new FormControl(''),
   });

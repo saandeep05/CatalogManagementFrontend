@@ -1,0 +1,7 @@
+.currency-buttons {
+    width: 180px;
+}
+.currency-buttons label {
+    border-right: 2px solid;
+    padding-right: 4px;
+}
