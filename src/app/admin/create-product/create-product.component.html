@@ -54,6 +54,9 @@
         <!-- <label for="short-description">Short Description</label> -->
         <input type="text" id="short-description" formControlName="shortDescription" placeholder="Short Description" />
 
-        <button type="submit">Create</button>
+        <div class="create-button-grp">
+            <button type="submit" (click)="createProduct()" class="submit-button">Create</button>
+            <button type="reset" (click)="handleCancel()" class="cancel-button">Cancel</button>
+        </div>
     </form>
 </div>

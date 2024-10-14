@@ -44,7 +44,7 @@
         }
         <div>
             @if(isProductFormActive) {
-                <app-create-product [catalogId]="catalogActiveId" [catalogName]="catalogActiveName"></app-create-product>
+                <app-create-product [catalogId]="catalogActiveId" [catalogName]="catalogActiveName" (cancel)="toggleProductForm()"></app-create-product>
             }
         </div>
     </div>

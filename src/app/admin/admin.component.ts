@@ -58,6 +58,7 @@ export class AdminComponent implements OnInit {
 
   toggleProductForm(): void {
     this.isCatalogFormActive = false;
+    this.setDefaultActiveCatalog();
     this.isProductFormActive = !this.isProductFormActive;
   }
 

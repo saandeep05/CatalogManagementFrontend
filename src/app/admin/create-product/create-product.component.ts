@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ProductService } from '../../service/product.service';
 
@@ -11,6 +11,7 @@ export class CreateProductComponent {
   productService: ProductService = inject(ProductService);
   @Input() catalogId: Number = 0;
   @Input() catalogName: String = '';
+  @Output() cancel = new EventEmitter<String>();
 
   productForm = new FormGroup({
     name: new FormControl(''),
@@ -23,5 +24,9 @@ export class CreateProductComponent {
 
   createProduct(): void {
     this.productService.createProduct(this.productForm, this.catalogId);
+  }
+
+  handleCancel(): void {
+    this.cancel.emit('');
   }
 }
