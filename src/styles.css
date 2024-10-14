@@ -193,3 +193,14 @@ p {
     color: antiquewhite !important;
     background-color: rgb(160, 8, 8) !important;
 }
+
+.item .item-info .deleted-item-btn {
+    font-weight: bolder;
+    color: #2E4052 !important;
+    background-color: gainsboro !important;
+}
+
+.item .item-info .deleted-item-btn:hover {
+    box-shadow: none;
+    cursor: auto;
+}
