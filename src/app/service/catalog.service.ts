@@ -23,7 +23,7 @@ export class CatalogService {
     console.log(this.headers);
     console.log(options);
 
-    return this.http.get(this.baseUrl, { headers: this.headers });
+    return this.http.get(this.baseUrl+'?deleted=false', { headers: this.headers });
   }
 
   getSearchedCatalogs(form: FormGroup): Observable<Catalog[]> {

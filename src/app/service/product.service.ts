@@ -21,7 +21,7 @@ export class ProductService {
     let options = {headers: this.headers};
     console.log(options);
 
-    return this.http.get<Product[]>(this.baseUrl, options);
+    return this.http.get<Product[]>(this.baseUrl+'?deleted=false', options);
   }
 
   getSearchedProducts(searchWord: string): Observable<Product[]> {
