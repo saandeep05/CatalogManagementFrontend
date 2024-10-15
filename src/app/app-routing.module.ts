@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './home/login/login.component';
 import { RegisterComponent } from './home/register/register.component';
 import { UserDirectComponent } from './user-direct/user-direct.component';
+import { ViewProductsComponent } from './admin/view-products/view-products.component';
 
 const routes: Routes = [
   {path: "register", component: RegisterComponent},
   {path: "login", component: LoginComponent},
-  {path: "dashboard", component: UserDirectComponent}
+  {path: "dashboard", component: UserDirectComponent},
+  {path: "catalog/:catalogId", component: ViewProductsComponent}
 ];
 
 @NgModule({

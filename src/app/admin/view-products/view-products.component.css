@@ -1,0 +1,26 @@
+.view-products {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.feed {
+    margin: 1rem;
+}
+
+.item-header .edit-button, .item-header .cancel-button {
+    padding: 5px 5px;
+    font-family: 'Roboto Mono', monospace;
+    background-color: #412234;
+    color: antiquewhite;
+    border: 2px solid #412234;
+    border-radius: 2px;
+}
+
+.product-side-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

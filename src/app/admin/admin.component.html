@@ -26,7 +26,7 @@
                     } @else {
                         <button class="cancel-product" (click)="handleAddProduct(catalog.id, catalog.name)">Cancel</button>
                     }
-                    <button class="show-more">Show Products</button>
+                    <button class="show-more" [routerLink]="['/catalog', catalog.id]">Show Products</button>
                     @if(catalog.deletedAt == null) {
                         <button class="delete-item-btn" (click)="handleDeleteCatalog(catalog.id, $index)">Delete</button>
                     } @else {

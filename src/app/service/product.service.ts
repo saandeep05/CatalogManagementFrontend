@@ -46,6 +46,25 @@ export class ProductService {
     this.http.post(this.baseUrl + `/${catalogId}`, payload, options).subscribe();
   }
 
+  getProductsByCatalogId(catalodId: String): Observable<Product[]> {
+    let options = {headers: this.headers};
+    return this.http.get<Product[]>(this.baseUrl+`/${catalodId}`, options);
+  }
+
+  updateProduct(id: Number, form: FormGroup) {
+    let options = {headers: this.headers};
+    let {name, category, price, currency, longDescription, shortDescription} = form.value;
+    let payload: ProductPayload = {
+      name,
+      category,
+      price,
+      currency,
+      longDescription,
+      shortDescription,
+    };
+    this.http.put(this.baseUrl+`/${id}`, payload, options).subscribe();
+  }
+
   getToken(): string {
     return <string>localStorage.getItem('token');
   }

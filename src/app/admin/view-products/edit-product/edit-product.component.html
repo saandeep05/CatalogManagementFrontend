@@ -1,0 +1,31 @@
+<p>Editing: {{product?.name}}</p>
+<form [formGroup]="productEditForm" class="create-form" (submit)="updateProduct()">
+    <label for="name">Name</label>
+    <input type="text" id="name" formControlName="name" placeholder="Name" />
+
+    <label for="category">Category</label>
+    <input type="text" id="category" formControlName="category" placeholder="Category" />
+
+    <label for="price">Price</label>
+    <input type="text" id="price" formControlName="price"  placeholder="Price"/>
+
+    <div>
+        <label for="currenct-list">Currency:</label>
+        <select class="currency-list" formControlName="currency">
+            @for (curr of currencyList; track $index) {
+                <option [id]="curr" [value]="curr" >{{curr}}</option>
+            }
+        </select>
+    </div>
+
+    <label for="long-description">Long Description</label>
+    <textarea type="text-area" id="long-description" formControlName="longDescription" placeholder="Long Description" rows="4" cols="20"></textarea>
+
+    <label for="short-description">Short Description</label>
+    <input type="text" id="short-description" formControlName="shortDescription" placeholder="Short Description" />
+
+    <div class="create-button-grp">
+        <button type="submit" (click)="updateProduct()" class="submit-button">Create</button>
+        <button type="reset" (click)="handleCancel()" class="cancel-button">Cancel</button>
+    </div>
+</form>
