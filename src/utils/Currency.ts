@@ -1,0 +1,1 @@
+export enum Currency { INR, USD, EUR, YEN, AUD, GBP, KWD }

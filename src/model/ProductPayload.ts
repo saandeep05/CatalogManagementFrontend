@@ -1,3 +1,4 @@
+import { Currency } from "../utils/Currency";
 import { ProductSearchPayload } from "./ProductSearchPayload";
 
 export interface ProductPayload extends ProductSearchPayload {
@@ -8,5 +9,3 @@ export interface ProductPayload extends ProductSearchPayload {
     longDescription: String;
     shortDescription: String;
 }
-
-enum Currency { INR, USD, EUR, YEN, AUD, GBP, KWD }

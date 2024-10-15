@@ -1,6 +1,7 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ProductService } from '../../service/product.service';
+import { Currency } from '../../../utils/Currency';
 
 @Component({
   selector: 'app-create-product',
@@ -12,12 +13,21 @@ export class CreateProductComponent {
   @Input() catalogId: Number = 0;
   @Input() catalogName: String = '';
   @Output() cancel = new EventEmitter<String>();
+  currencyList = [
+    "INR",
+    "USD",
+    "EUR",
+    "YEN",
+    "AUD",
+    "GBP",
+    "KWD"
+  ];
 
   productForm = new FormGroup({
     name: new FormControl(''),
     category: new FormControl(''),
     price: new FormControl(),
-    currency: new FormControl(''),
+    currency: new FormControl("INR"),
     longDescription: new FormControl(''),
     shortDescription: new FormControl(''),
   });
