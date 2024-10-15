@@ -16,6 +16,8 @@ export class RegisterComponent {
     private userService: UserService
   ) {}
 
+  @Output() flush = new EventEmitter<String>();
+
   registerForm = new FormGroup({
     username: new FormControl(''),
     email: new FormControl(''),
@@ -28,6 +30,7 @@ export class RegisterComponent {
       data => {
         console.log(data);
         this.userService.storeInLocalStorage(data);
+        this.flush.emit(data.username);
         this.router.navigateByUrl('/dashboard');
       }
     );

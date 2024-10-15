@@ -1,3 +1,5 @@
-<app-navbar [username]="username"></app-navbar>
-
+<app-navbar [username]="username" (logout)="handleFlush($event)"></app-navbar>
+@if(router.url == '/') {
+    <app-home (flush)="handleFlush($event)"></app-home>
+}
 <router-outlet></router-outlet>

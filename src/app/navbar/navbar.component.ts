@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,19 +8,20 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   @Input() username: String = '';
+  @Output() logout = new EventEmitter();
   isLoggedIn: boolean = false;
 
   constructor(private router: Router) {}
 
   ngOnInit() {
-    if(this.username == '' || this.username == null) {
-      this.isLoggedIn = false;
-    } else {
-      this.isLoggedIn = true;
-    }
+    this.loadNavbar();
   }
 
   ngOnChanges() {
+    this.loadNavbar();
+  }
+
+  loadNavbar(): void {
     if(this.username == '' || this.username == null) {
       this.isLoggedIn = false;
     } else {
@@ -35,5 +36,6 @@ export class NavbarComponent implements OnInit {
     this.username = '';
     this.isLoggedIn = false;
     this.router.navigateByUrl('/');
+    this.logout.emit(this.username);
   }
 }

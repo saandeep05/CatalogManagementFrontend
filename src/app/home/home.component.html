@@ -11,12 +11,12 @@
     </div>
     <div class="user-details-form">
         @if (isRegister) {
-            <app-register></app-register>
+            <app-register (flush)="handleFlush($event)"></app-register>
             <div class="toggle-form">
                 <a (click)="toggleIsRegister()" routerLink="">Login Instead</a>
             </div>
         } @else {
-            <app-login></app-login>
+            <app-login (flush)="handleFlush($event)"></app-login>
             <div class="toggle-form">
                 <a (click)="toggleIsRegister()" routerLink="">New User? Register</a>
             </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +7,13 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   isRegister: boolean = true;
+  @Output() flush = new EventEmitter<String>();
 
   toggleIsRegister() {
     this.isRegister = !this.isRegister;
+  }
+
+  handleFlush(username: String) {
+    this.flush.emit(username);
   }
 }

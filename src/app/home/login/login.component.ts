@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UserService } from '../../service/user.service';
 import { UserResponse } from '../../../model/UserResponse';
@@ -15,6 +15,8 @@ export class LoginComponent {
     private userService: UserService
   ) {}
 
+  @Output() flush = new EventEmitter<String>();
+
   loginForm = new FormGroup({
     username: new FormControl(''),
     password: new FormControl('')
@@ -26,6 +28,7 @@ export class LoginComponent {
       data => {
         console.log(data);
         this.userService.storeInLocalStorage(data);
+        this.flush.emit(data.username);
         this.router.navigateByUrl('/dashboard');
       }
     );
