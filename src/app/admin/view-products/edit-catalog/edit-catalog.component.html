@@ -1,0 +1,11 @@
+<div class="edit">
+    <div class="create-form">
+        <label for="c-name">Edit Catalog</label>
+        <input type="text" id="c-name" [(ngModel)]="name" placeholder="Catalog name" />
+
+        <div class="create-button-grp">
+            <button type="submit" (click)="editCatalog()" class="submit-button">Edit</button>
+            <button type="reset" (click)="handleCancel()" class="cancel-button">Cancel</button>
+        </div>
+    </div>
+</div>

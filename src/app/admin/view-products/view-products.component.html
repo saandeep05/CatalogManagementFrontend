@@ -33,6 +33,11 @@
     <div class="product-side-bar">
         <div class="meta-data">
             <p>Catalog id: {{catalogId}}</p>
+            @if (editCatalogEnabled) {
+                <app-edit-catalog [catalogId]="editCatalogEnabled" [catalogName]="catalogName" (goBack)="handleEditCatalog()"></app-edit-catalog>
+            } @else {
+                <button class="edit-catalog-btn" (click)="handleEditCatalog()">Edit Catalog</button>
+            }
             <button class="go-back" routerLink="/dashboard">Go to Dashboard</button>
         </div>
         @if (editEnabled) {

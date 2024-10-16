@@ -48,6 +48,12 @@ export class CatalogService {
     this.http.post<Catalog>(this.baseUrl, catalog, options).subscribe();
   }
 
+  updateCatalog(catalogId: Number, name: String): void {
+    let options = {headers: this.headers};
+    let payload: CatalogPayload = {name};
+    this.http.put(this.baseUrl+`/${catalogId}`, payload, options).subscribe();
+  }
+
   deleteCatalog(catalogId: Number): void {
     let options = {headers: this.headers};
     this.http.delete<void>(this.baseUrl+`/${catalogId}`, options).subscribe();

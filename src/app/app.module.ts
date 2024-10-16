@@ -16,6 +16,7 @@ import { CreateProductComponent } from './admin/create-product/create-product.co
 import { CreateCatalogComponent } from './admin/create-catalog/create-catalog.component';
 import { ViewProductsComponent } from './admin/view-products/view-products.component';
 import { EditProductComponent } from './admin/view-products/edit-product/edit-product.component';
+import { EditCatalogComponent } from './admin/view-products/edit-catalog/edit-catalog.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { EditProductComponent } from './admin/view-products/edit-product/edit-pr
     CreateProductComponent,
     CreateCatalogComponent,
     ViewProductsComponent,
-    EditProductComponent
+    EditProductComponent,
+    EditCatalogComponent,
     
   ],
   imports: [

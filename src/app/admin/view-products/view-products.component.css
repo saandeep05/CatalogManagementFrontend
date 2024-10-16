@@ -59,3 +59,12 @@
     border-radius: 2px 2px;
     font-family: 'Roboto Mono', monospace;
 }
+
+.edit-catalog-btn {
+    background-color: antiquewhite;
+    color: #412234;
+    padding: 5px 5px;
+    font-family: 'Roboto Mono', monospace;
+    border: 2px solid antiquewhite !important;
+    margin-bottom: 1rem;
+}

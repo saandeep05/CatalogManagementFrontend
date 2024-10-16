@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../service/product.service';
 import { Product } from '../../../model/Product';
+import { Catalog } from '../../../model/Catalog';
 
 @Component({
   selector: 'app-view-products',
@@ -12,12 +13,15 @@ import { Product } from '../../../model/Product';
 export class ViewProductsComponent {
   constructor(private route: ActivatedRoute, private productService: ProductService) {}
 
-  catalogId: string|Number = '';
+  catalogId: Number|string = '';
+  catalogName: string = '';
   products: Product[] = [];
   editEnabled: Product|null = null;
+  editCatalogEnabled: Number|null = null;
 
   ngOnInit(): void {
     let catalogId = this.route.snapshot.paramMap.get('catalogId');
+    this.catalogName = <string>this.route.snapshot.paramMap.get('catalogName');
     this.catalogId = <string>catalogId;
     this.productService.getProductsByCatalogId(<String>catalogId).subscribe(
       data => {
@@ -30,6 +34,11 @@ export class ViewProductsComponent {
     if(this.editEnabled == null) this.editEnabled = product;
     else if(this.editEnabled.id == product.id) this.editEnabled = null;
     else this.editEnabled = product;
+  }
+
+  handleEditCatalog(): void {
+    if(this.editCatalogEnabled == null) this.editCatalogEnabled = <Number>this.catalogId;
+    else this.editCatalogEnabled = null;
   }
 
   handleDelete(id: Number, index: number): void {
