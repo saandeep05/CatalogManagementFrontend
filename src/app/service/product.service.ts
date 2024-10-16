@@ -68,6 +68,11 @@ export class ProductService {
     this.http.put(this.baseUrl+`/${id}`, payload, options).subscribe();
   }
 
+  deleteProduct(id: Number) {
+    let options = {headers: this.headers};
+    this.http.delete(this.baseUrl+`/${id}`, options).subscribe();
+  }
+
   getToken(): string {
     return <string>localStorage.getItem('token');
   }

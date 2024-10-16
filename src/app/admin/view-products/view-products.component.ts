@@ -31,4 +31,9 @@ export class ViewProductsComponent {
     else if(this.editEnabled.id == product.id) this.editEnabled = null;
     else this.editEnabled = product;
   }
+
+  handleDelete(id: Number, index: number): void {
+    this.products.splice(index, 1);
+    this.productService.deleteProduct(id);
+  }
 }

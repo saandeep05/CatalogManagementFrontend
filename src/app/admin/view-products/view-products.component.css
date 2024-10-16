@@ -18,9 +18,44 @@
     border-radius: 2px;
 }
 
+.item .short-description {
+    border-bottom: 2px dotted #412234;
+}
+
+.item .no-long-desc {
+    border-bottom: none;
+}
+
+.item .long-description p {
+    font-size: 0.7rem;
+}
+
 .product-side-bar {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.item .delete-item-btn {
+    padding: 5px 5px;
+    font-family: 'Roboto Mono', monospace;
+    border: 2px solid rgb(160, 8, 8);
+    border-radius: 2px;
+}
+
+.meta-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.go-back {
+    padding: 5px 5px;
+    background-color: #412234;
+    color: antiquewhite;
+    border: 2px solid #412234;
+    border-radius: 2px 2px;
+    font-family: 'Roboto Mono', monospace;
 }

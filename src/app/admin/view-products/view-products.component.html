@@ -12,6 +12,7 @@
                         } @else {
                             <button class="edit-button" (click)="handleEditProduct(product)">Edit</button>
                         }
+                        <button class="delete-item-btn" (click)="handleDelete(product.id, $index)">Delete</button>
                     </div>
                     <div class="product-info item-info">
                         @if(product.shortDescription) {
@@ -30,7 +31,10 @@
         }
     </div>
     <div class="product-side-bar">
-        <div><p>Catalog id: {{catalogId}}</p></div>
+        <div class="meta-data">
+            <p>Catalog id: {{catalogId}}</p>
+            <button class="go-back" routerLink="/dashboard">Go to Dashboard</button>
+        </div>
         @if (editEnabled) {
             <app-edit-product [product]="editEnabled" (cancel)="handleEditProduct($event)"></app-edit-product>
         }
