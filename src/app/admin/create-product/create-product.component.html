@@ -30,10 +30,12 @@
 
                 <div class="create-button-grp">
                     <button type="reset" (click)="handleCancel($index)" class="cancel-button">Remove</button>
-                    <button type="button" (click)="addForm()" class="add-form">Add form</button>
                 </div>
             </form>
         }
-        <button type="submit" (click)="createProduct()" class="submit-button">Submit</button>
+        <div class="create-button-grp">
+            <button type="button" (click)="addForm()" class="add-form">Add form</button>
+            <button type="submit" (click)="createProduct()" class="submit-button">Submit</button>
+        </div>
     </div>
 </div>
