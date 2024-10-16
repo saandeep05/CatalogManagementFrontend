@@ -31,17 +31,20 @@ export class ProductService {
     return this.http.get<Product[]>(this.baseUrl+`/search/${searchWord}`, options);
   }
 
-  createProduct(form: FormGroup, catalogId: Number): void {
+  createProduct(forms: FormGroup[], catalogId: Number): void {
     let options = {headers: this.headers};
-    let {name, category, price, currency, longDescription, shortDescription} = form.value;
-    let payload: ProductPayload = {
-      name,
-      category,
-      price,
-      currency,
-      longDescription,
-      shortDescription
-    };
+    let payload: ProductPayload[] = [];
+    forms.forEach((form) => {
+        let {name, category, price, currency, longDescription, shortDescription} = form.value;
+        payload.push({
+          name,
+          category,
+          price,
+          currency,
+          longDescription,
+          shortDescription
+        });
+      })
 
     this.http.post(this.baseUrl + `/${catalogId}`, payload, options).subscribe();
   }
