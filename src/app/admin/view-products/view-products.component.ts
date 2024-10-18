@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../service/product.service';
 import { Product } from '../../../model/Product';
 import { Catalog } from '../../../model/Catalog';
+import { getUser } from '../../../utils/getUser';
 
 @Component({
   selector: 'app-view-products',
@@ -11,7 +12,7 @@ import { Catalog } from '../../../model/Catalog';
   styleUrl: './view-products.component.css'
 })
 export class ViewProductsComponent {
-  constructor(private route: ActivatedRoute, private productService: ProductService) {}
+  constructor(private route: ActivatedRoute, private productService: ProductService, private router: Router) {}
 
   catalogId: Number|string = '';
   catalogName: string = '';
@@ -20,6 +21,11 @@ export class ViewProductsComponent {
   editCatalogEnabled: Number|null = null;
 
   ngOnInit(): void {
+    let userRole = getUser();
+    if(userRole == null || userRole == 'USER') {
+      alert('You are not allowed here');
+      this.router.navigateByUrl('/dashboard');
+    }
     let catalogId = this.route.snapshot.paramMap.get('catalogId');
     this.catalogName = <string>this.route.snapshot.paramMap.get('catalogName');
     this.catalogId = <string>catalogId;
