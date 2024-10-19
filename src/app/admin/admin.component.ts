@@ -54,12 +54,14 @@ export class AdminComponent implements OnInit {
     this.isProductFormActive = false;
     this.setDefaultActiveCatalog();
     this.isCatalogFormActive = !this.isCatalogFormActive;
+    this.fetchAllCatalogs()
   }
 
   toggleProductForm(): void {
     this.isCatalogFormActive = false;
     this.setDefaultActiveCatalog();
     this.isProductFormActive = !this.isProductFormActive;
+    this.fetchAllCatalogs();
   }
 
   handleAddProduct(catalogId: Number, catalogName: String): void {
@@ -83,5 +85,6 @@ export class AdminComponent implements OnInit {
   handleDeleteCatalog(catalogId: Number, index: number): void {
     this.catalogService.deleteCatalog(catalogId);
     this.catalogs.splice(index, 1);
+    // this.fetchAllCatalogs();
   }
 }

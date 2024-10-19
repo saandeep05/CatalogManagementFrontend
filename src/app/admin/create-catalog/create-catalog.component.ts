@@ -19,6 +19,7 @@ export class CreateCatalogComponent {
     }
     this.catalogService.createCatalog(this.name);
     alert('Catalog Successfully created');
+    this.cancel.emit('');
   }
 
   handleCancel(): void {
