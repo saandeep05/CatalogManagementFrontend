@@ -5,6 +5,7 @@ import { ProductService } from '../../service/product.service';
 import { Product } from '../../../model/Product';
 import { Catalog } from '../../../model/Catalog';
 import { getUser } from '../../../utils/getUser';
+import { logout } from '../../../utils/logout';
 
 @Component({
   selector: 'app-view-products',
@@ -32,6 +33,11 @@ export class ViewProductsComponent {
     this.productService.getProductsByCatalogId(<String>catalogId).subscribe(
       data => {
         this.products = data;
+      },
+      error => {
+        logout();
+        alert('You are logged out');
+        this.router.navigateByUrl('/');
       }
     )
   }
