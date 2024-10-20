@@ -44,7 +44,11 @@ export class EditProductComponent {
   });
 
   updateProduct(): void {
-    this.productService.updateProduct(<Number>this.product?.id, this.productEditForm);
+    this.productService.updateProduct(<Number>this.product?.id, this.productEditForm).subscribe(
+      data => {
+        this.cancel.emit(<Product>this.product);
+      }
+    );
   }
 
   handleCancel(): void {

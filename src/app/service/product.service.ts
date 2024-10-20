@@ -31,7 +31,7 @@ export class ProductService {
     return this.http.get<Product[]>(this.baseUrl+`/search/${searchWord}`, options);
   }
 
-  createProduct(forms: FormGroup[], catalogId: Number): void {
+  createProduct(forms: FormGroup[], catalogId: Number): Observable<Object> {
     let options = {headers: this.headers};
     let payload: ProductPayload[] = [];
     forms.forEach((form) => {
@@ -46,7 +46,7 @@ export class ProductService {
         });
       })
 
-    this.http.post(this.baseUrl + `/${catalogId}`, payload, options).subscribe();
+    return this.http.post(this.baseUrl + `/${catalogId}`, payload, options);
   }
 
   getProductsByCatalogId(catalodId: String): Observable<Product[]> {
@@ -54,7 +54,7 @@ export class ProductService {
     return this.http.get<Product[]>(this.baseUrl+`/${catalodId}`, options);
   }
 
-  updateProduct(id: Number, form: FormGroup) {
+  updateProduct(id: Number, form: FormGroup): Observable<Object> {
     let options = {headers: this.headers};
     let {name, category, price, currency, longDescription, shortDescription} = form.value;
     let payload: ProductPayload = {
@@ -65,7 +65,7 @@ export class ProductService {
       longDescription,
       shortDescription,
     };
-    this.http.put(this.baseUrl+`/${id}`, payload, options).subscribe();
+    return this.http.put(this.baseUrl+`/${id}`, payload, options);
   }
 
   deleteProduct(id: Number) {

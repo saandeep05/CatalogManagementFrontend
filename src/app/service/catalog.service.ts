@@ -41,11 +41,11 @@ export class CatalogService {
     return this.http.post<Catalog[]>(this.baseUrl + `/search`, payload, options);
   }
 
-  createCatalog(name: String): void {
+  createCatalog(name: String): Observable<Catalog> {
     let options = {headers: this.headers};
     let catalog: CatalogPayload = {name};
     
-    this.http.post<Catalog>(this.baseUrl, catalog, options).subscribe();
+    return this.http.post<Catalog>(this.baseUrl, catalog, options);
   }
 
   updateCatalog(catalogId: Number, name: String): void {

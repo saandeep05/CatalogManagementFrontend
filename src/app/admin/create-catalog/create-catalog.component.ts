@@ -17,9 +17,12 @@ export class CreateCatalogComponent {
       alert('Catalog name must not be empty');
       return;
     }
-    this.catalogService.createCatalog(this.name);
-    alert('Catalog Successfully created');
-    this.cancel.emit('');
+    this.catalogService.createCatalog(this.name).subscribe(
+      data => {
+        alert('Catalog Successfully created');
+        this.cancel.emit('');
+      }
+    );
   }
 
   handleCancel(): void {

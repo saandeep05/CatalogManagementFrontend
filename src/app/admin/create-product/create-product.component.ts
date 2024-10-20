@@ -43,9 +43,12 @@ export class CreateProductComponent {
   }>[] = [this.productForm];
 
   createProduct(): void {
-    this.productService.createProduct(this.productFormList, this.catalogId);
-    alert(`products added to ${this.catalogName} successfully`);
-    this.cancel.emit('');
+    this.productService.createProduct(this.productFormList, this.catalogId).subscribe(
+      data => {
+        alert(`products added to ${this.catalogName} successfully`);
+        this.cancel.emit('');
+      }
+    );
   }
 
   addForm(): void {

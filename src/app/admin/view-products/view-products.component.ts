@@ -27,6 +27,10 @@ export class ViewProductsComponent {
       alert('You are not allowed here');
       this.router.navigateByUrl('/dashboard');
     }
+    this.fetchByCatalogId();
+  }
+
+  fetchByCatalogId(): void {
     let catalogId = this.route.snapshot.paramMap.get('catalogId');
     this.catalogName = <string>this.route.snapshot.paramMap.get('catalogName');
     this.catalogId = <string>catalogId;
@@ -46,6 +50,7 @@ export class ViewProductsComponent {
     if(this.editEnabled == null) this.editEnabled = product;
     else if(this.editEnabled.id == product.id) this.editEnabled = null;
     else this.editEnabled = product;
+    this.fetchByCatalogId();
   }
 
   handleEditCatalog(): void {
